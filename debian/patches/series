@@ -1,0 +1,3 @@
+add-texinfo-dir-entry.patch
+fix-ssh-tunnel-auth.patch
+texi2html.patch

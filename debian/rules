@@ -1,0 +1,45 @@
+#!/usr/bin/make -f
+#-*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+export PYBUILD_NAME=xlib
+
+%:
+	dh $@ --with python3 --buildsystem=pybuild
+
+override_dh_auto_build:
+	dh_auto_build
+	make -C doc html
+	# for some reason makeinfo doesn’t create toc on the first run
+	make -C doc html
+
+override_dh_auto_clean:
+	dh_auto_clean
+	make -C doc clean
+
+override_dh_auto_install:
+	dh_auto_install
+	find debian/python3-xlib -name '*.py' -print0 | xargs -0 dos2unix -q
+
+override_dh_installdocs:
+	dh_installdocs
+	rm -f debian/*/usr/share/doc/*/*/Makefile
+
+override_dh_installexamples:
+	dh_installexamples
+	# adjust python3 examples hashbang
+	sed -i '1 s/python$$/python3/' debian/python3-xlib/usr/share/doc/*/examples/*.py
+	# set all examples executable
+	chmod +x debian/python*-xlib/usr/share/doc/*/examples/*.py
+
+override_dh_compress:
+	dh_compress -X.py
+
+override_dh_auto_test:
+ifeq (,$(filter nocheck, $(DEB_BUILD_OPTIONS)))
+	xvfb-run dh_auto_test
+endif
+
+.PHONY: override_dh_auto_build override_dh_auto_clean override_dh_installexamples override_dh_compress

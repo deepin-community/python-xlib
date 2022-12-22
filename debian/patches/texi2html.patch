@@ -1,0 +1,14 @@
+From: Andrej Shadura <andrew@shadura.me>
+Subject: Use makeinfo instead of texi2html
+
+--- a/doc/html/Makefile
++++ b/doc/html/Makefile
+@@ -3,7 +3,7 @@
+ include ../src/defs
+ 
+ python-xlib_toc.html: $(SRCS)
+-	texi2html --output=. --split=node --menu $(TOPSRC)
++	makeinfo --output=. --html --split=node $(TOPSRC)
+ 	ln -sf python-xlib_toc.html index.html
+ 
+ clean:

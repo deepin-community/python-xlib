@@ -1,0 +1,30 @@
+Source: python-xlib
+Section: python
+Priority: optional
+Maintainer: Debian Python Team <team+python@tracker.debian.org>
+Uploaders:
+ Andrej Shadura <andrewsh@debian.org>,
+ Emmanuel Arias <eamanu@yaerobi.com>,
+Build-Depends: debhelper-compat (= 13),
+               dh-python,
+               dos2unix,
+               python3-all,
+               python3-setuptools (>= 0.6.24),
+               python3-setuptools-scm,
+               python3-mock <!nocheck>,
+               python3-six <!nocheck>,
+               texinfo,
+               xauth <!nocheck>,
+               xvfb <!nocheck>
+Standards-Version: 4.5.0
+Homepage: https://github.com/python-xlib/python-xlib
+Vcs-Git: https://salsa.debian.org/python-team/packages/python-xlib.git
+Vcs-Browser: https://salsa.debian.org/python-team/packages/python-xlib
+
+Package: python3-xlib
+Architecture: all
+Depends: ${misc:Depends}, ${python3:Depends}
+Description: interface for Python 3 to the X11 protocol
+ python-xlib is a 100% pure Python 3 implementation of the X11
+ protocol. It currently implements client-side X11R6 fully, supports
+ the resource database, ICCM, and the Shape extension.

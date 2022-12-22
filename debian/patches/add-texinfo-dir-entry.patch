@@ -1,0 +1,16 @@
+--- a/doc/src/python-xlib.texi
++++ b/doc/src/python-xlib.texi
+@@ -39,6 +39,13 @@
+ translation approved by the Free Software Foundation.
+ @end ifinfo
+ 
++@ifinfo
++@dircategory Python
++@direntry
++* python-xlib: (python-xlib).		Interface for Python to the X11 Protocol 
++@end direntry
++@end ifinfo
++
+ @titlepage
+ @title The Python X Library
+ @author Peter Liljenberg

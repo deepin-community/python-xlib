@@ -1,0 +1,356 @@
+python-xlib (0.29-1) unstable; urgency=medium
+
+  [ Andrej Shadura ]
+  * New upstream release (Closes: #975542).
+
+  [ Ondřej Nový ]
+  * d/control: Update Maintainer field with new Debian Python Team
+    contact address.
+
+ -- Andrej Shadura <andrewsh@debian.org>  Mon, 23 Nov 2020 12:13:39 +0100
+
+python-xlib (0.27-3) unstable; urgency=medium
+
+  [ Emmanuel Arias ]
+  * d/changelog: fix typo crrect => correct.
+  * d/tests/autopkgtest-pkg-python.conf: fix variable name
+    import-name => import_name.
+
+  [ Andrej Shadura ]
+  * Update Vcs-* after the move.
+  * Drop the no longer used patch.
+  * Drop "This is a Python 3 version" since we no longer have the Python 2
+    package.
+  * Fix an email address in an old changelog entry.
+
+ -- Andrej Shadura <andrewsh@debian.org>  Mon, 21 Sep 2020 12:00:17 +0200
+
+python-xlib (0.27-2) unstable; urgency=medium
+
+  [ Emmanuel Arias ]
+  * d/salsa-ci.yml: enable salsa-ci.
+  * d/control: Bump debhelper-compat to 13.
+  * d/copyright: add source url.
+  * d/tests/autopkgtest-pkg-python.conf: set import_name configuration
+    variable to correct import on autdep8.
+
+  [ Andrej Shadura ]
+  * Add Uploaders.
+
+ -- Andrej Shadura <andrewsh@debian.org>  Sat, 19 Sep 2020 13:32:58 +0300
+
+python-xlib (0.27-1) unstable; urgency=medium
+
+  [ Andrej Shadura ]
+  * New upstream release.
+
+  [ Moritz Muehlenhoff ]
+  * Remove Python 2 support (Closes: #938275).
+
+ -- Andrej Shadura <andrewsh@debian.org>  Sun, 12 Apr 2020 16:12:10 +0200
+
+python-xlib (0.26-2) unstable; urgency=medium
+
+  * Bump Standards-Version to 4.5.0.
+  * Update debian/copyright.
+  * Set field Upstream-Name in debian/copyright.
+  * Remove obsolete field Name from debian/upstream/metadata
+    (already present in machine-readable debian/copyright).
+
+ -- Andrej Shadura <andrewsh@debian.org>  Sat, 21 Mar 2020 21:40:28 +0100
+
+python-xlib (0.26-1) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * d/control: Remove ancient X-Python-Version field.
+  * d/control: Remove ancient X-Python3-Version field.
+  * d/changelog: Remove trailing whitespaces.
+  * Use debhelper-compat instead of debian/compat.
+
+  [ Andrej Shadura ]
+  * New upstream release.
+  * Convert to UNIX line endings after installing.
+  * Bump debhelper from old 9 to 12.
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Name,
+    Repository, Repository-Browse.
+  * Refresh patches to apply with DOS newlines.
+
+ -- Andrej Shadura <andrewsh@debian.org>  Mon, 02 Mar 2020 18:58:56 +0100
+
+python-xlib (0.23-2) unstable; urgency=medium
+
+  * Clean .eggs.
+  * Build-Depend on mock.
+  * Fix documentation generation (Closes: #883084, #883818).
+
+ -- Andrej Shadura <andrewsh@debian.org>  Sat, 21 Jul 2018 15:19:18 +0200
+
+python-xlib (0.23-1) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * d/control: Set Vcs-* to salsa.debian.org
+
+  [ Andrej Shadura ]
+  * New upstream release.
+  * Refresh patches.
+
+ -- Andrej Shadura <andrewsh@debian.org>  Sat, 21 Jul 2018 13:30:51 +0200
+
+python-xlib (0.20-3) unstable; urgency=medium
+
+  [ Jeremy Bicha ]
+  * README is now README.rst.
+
+  [ Andrew Shadura ]
+  * Use texinfo instead of texi2html.
+
+ -- Andrew Shadura <andrewsh@debian.org>  Mon, 27 Nov 2017 13:10:02 +0000
+
+python-xlib (0.20-2) unstable; urgency=medium
+
+  [ Jeremy Bicha ]
+  * Add missing Build-Depends (Closes: #882772)
+  * Modify fix-ssh-tunnel-auth.patch: Use spaces not tabs
+  * Update Homepage and Vcs fields
+
+ -- Andrew Shadura <andrewsh@debian.org>  Sun, 26 Nov 2017 23:39:36 +0000
+
+python-xlib (0.20-1) unstable; urgency=medium
+
+  * New upstream version 0.20
+    - Update debian/watch to the new upstream.
+    - Disable and remove old patches.
+
+ -- Andrew Shadura <andrewsh@debian.org>  Sun, 26 Nov 2017 11:52:22 +0000
+
+python-xlib (0.14+20091101-6) unstable; urgency=medium
+
+  * Apply a patch from Mike Gabriel to fix UnicodeDecodeError in
+    Xlib/xobject/drawable.py (Closes: #876728)
+
+ -- Andrew Shadura <andrewsh@debian.org>  Mon, 25 Sep 2017 12:47:31 +0200
+
+python-xlib (0.14+20091101-5) unstable; urgency=medium
+
+  * Fix LP: #1482844 properly: lp1432889.patch is incompatible with
+    fix-auth-lp1482844.patch (Closes: #796889).
+
+ -- Andrew Shadura <andrewsh@debian.org>  Tue, 25 Aug 2015 16:18:06 +0200
+
+python-xlib (0.14+20091101-4) unstable; urgency=medium
+
+  * Do proper string-bytes conversion (LP: #1482844).
+  * Drop README.source.
+
+ -- Andrew Shadura <andrewsh@debian.org>  Tue, 18 Aug 2015 10:30:44 +0200
+
+python-xlib (0.14+20091101-3) unstable; urgency=medium
+
+  [ Ramkumar Ramachandra ]
+  * Remove useless debugging output (Closes: #565996)
+
+  [ Andrew Shadura ]
+  * Switch to 3.0 (quilt) format.
+  * Rename patches.
+  * Use debhelper 9 in its short form.
+  * Use pybuild.
+  * Bump Standards-Version.
+  * Don't build or install PostScript documentation and info files.
+  * Use system-provided texi2html instead of a shipped version
+    (Closes: #795057).
+  * Update debian/copyright (Closes: #795057).
+  * Don't install Makefile or texi2html with the documentation.
+  * Set executable bit for examples.
+
+ -- Andrew Shadura <andrewsh@debian.org>  Thu, 13 Aug 2015 08:14:19 +0200
+
+python-xlib (0.14+20091101-2) unstable; urgency=low
+
+  [ Marc Deslauriers ]
+  * debian/patches/lp1432889.patch: properly decode the xauthority file
+    into strings instead of byte arrays in Xlib/xauth.py. (LP: #1432889)
+  * debian/patches/python3: updated to fix a couple of porting errors
+    resulting in get_full_property() throwing an exception. (LP: #1231453)
+
+  [ Martin Pitt ]
+  * Drop obsolete python-support, move to dh_python2.
+  * Reduce texlive build dependency to texlive-latex-base, which is much less
+    heavyweight.
+  * Add debian/patches/python3: Port code to work with Python 3.
+    (http://sourceforge.net/p/python-xlib/patches/5)
+  * Build a python3-xlib package.
+  * debian/rules: Add missing dh_clean for clean target. (Closes: #671157)
+  * debian/rules: Clean doc/ directory, too.
+
+  [ Luke Faraone ]
+  * Change priority to 'optional' from 'extra'. (closes: #563199)
+
+  [ Jakub Wilk ]
+  * Use canonical URIs for Vcs-* fields.
+  * Remove obsolete Conflicts/Replaces with python2.3-xlib and python2.4-xlib.
+
+  [ Andrew Shadura ]
+  * Update the package descriptions.
+  * Update Vcs-* fields to point to Git.
+
+ -- Andrew Shadura <andrewsh@debian.org>  Fri, 07 Aug 2015 12:14:14 +0300
+
+python-xlib (0.14+20091101-1) unstable; urgency=low
+
+  [ Mike O'Connor ]
+  * New upstream release
+  * add debian/README.source
+  * add dependency on dpkg (>= 1.15.4) | install-info for install-info triggers
+  * add ${misc:depends}
+
+  [ Daniel Watkins ]
+  * Added patch to correct the mis-spelling of 'Rhomboid' in the examples.
+  * Fix old FSF address, as per lintian warning.
+
+  [ Sandro Tosi ]
+  * debian/control
+    - switch Vcs-Browser field to viewsvn
+
+ -- Mike O'Connor <stew@debian.org>  Thu, 05 Nov 2009 05:57:09 -0500
+
+python-xlib (0.14-2) unstable; urgency=low
+
+  [ Sandro Tosi ]
+  * debian/control
+    - uniforming Vcs-Browser field
+
+  [ Mike O'Connor ]
+  * clarify debian/copyright (Thanks: Moritz Muehlenhoff) (Closes: 494495)
+  * update standards version to 3.8.0 (no changes needed)
+
+ -- Mike O'Connor <stew@debian.org>  Wed, 13 Aug 2008 22:04:53 -0400
+
+python-xlib (0.14-1) unstable; urgency=low
+
+  * New upstream release
+  * No longer provides pythonX.Y-xlib packages
+  * Rename XS-Vcs-* fields to Vcs-* (dpkg supports them now)
+  * Added build dependency on texinfo
+  * Install NEWS file as upstream changelog
+
+ -- Mike O'Connor <stew@vireo.org>  Sat, 13 Oct 2007 18:06:44 -0400
+
+python-xlib (0.13-1) unstable; urgency=low
+
+  * New maintainer
+  * New upstream version (Closes: #421594)
+  * moved source changes to quilt
+  * fixed short description (Closes: #420774)
+  * increased receiving buffer size (thanks John Eikenberry) (Closes: #357507)
+  * added patch for DISPLAY=unix:0.0 (thanks Corey Wright) (Closes: #324443)
+  * fixing debian/rules to remove build directory and run make -C info clean
+  * combine python-xlib-doc with python-xlib
+
+ -- Mike O'Connor <stew@vireo.org>  Fri, 08 Jun 2007 04:46:36 -0400
+
+python-xlib (0.12-5.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Fix old FSF address.
+  * Update package to new python policy (Closes: #373367).
+
+ -- Pierre Habouzit <madcoder@debian.org>  Fri, 30 Jun 2006 11:18:19 +0200
+
+python-xlib (0.12-5) unstable; urgency=low
+
+  * New maintainer (closes: #254793)
+  * Build for Python 2.4 (closes: #292560)
+  * Fall back to unix:0 for localhost:0, modelling what Xlib
+    does and sshd requires (closes: #249071)
+  * Import socket in protocols/display.py (closes: #196387)
+  * Remove python2.1-xlib and python2.2-xlib, as Python 2.1
+    and 2.2 are going to be removed in the near future.
+  * Move to DH_COMPAT=4, write it to debian/compat.
+  * Recommend info as a concrete alternative to info-browser.
+  * Update build process: remove build-stamp target, use debhelper where
+    possible, remove unnecessary dh commands.
+  * Add watch file.
+  * Add dirinfo into texi sources, regenerate info file into separate
+    directory.
+  * Let python2.[34] suggest python-xlib-doc.
+
+ -- Martin v. Löwis <martin@v.loewis.de>  Sat, 20 Aug 2005 17:25:20 +0200
+
+python-xlib (0.12-4) unstable; urgency=low
+
+  * QA Upload.
+  * Set maintainer to Debian QA Group <packages@qa.debian.org>.
+
+ -- Thomas Bushnell <tb@debian.org>  Sat,  7 Aug 2004 18:11:23 -0700
+
+python-xlib (0.12-3.2) unstable; urgency=low
+
+  * NMU
+  * Move section to python (closes: #208179).
+  * Remove .pyc's in clean target.
+
+ -- Josselin Mouette <joss@debian.org>  Fri, 12 Sep 2003 13:00:42 +0200
+
+python-xlib (0.12-3.1) unstable; urgency=low
+
+  * NMU
+  * Move to section python, and doc for the doc package.
+  * Build a python2.3 version.
+  * Use dh_python, build-depend accordingly.
+  * Correct boilerplate in copyright.
+  * Remove postinst/prerm stuff, it is now autogenerated.
+  * Link to system GPL in copyright.
+
+ -- Josselin Mouette <joss@debian.org>  Fri, 29 Aug 2003 00:24:50 +0200
+
+python-xlib (0.12-3) unstable; urgency=low
+
+  * Set PV in python2.2-xlib (Closes: #159671)
+  * Oops, info-browser, not info-reader (Closes: #159758)
+
+ -- Moshe Zadka <moshez@debian.org>  Sat,  7 Sep 2002 16:50:11 +0300
+
+python-xlib (0.12-2) unstable; urgency=low
+
+  * Building support for python 2.1 and 2.2
+  * Switching to 2.2 as default Python version
+
+ -- Moshe Zadka <moshez@debian.org>  Thu, 23 May 2002 20:27:30 +0300
+
+python-xlib (0.12-1) unstable; urgency=low
+
+  * New upstream version.
+  * Maintainer upload, to mark bugs as closed (closes: #118242)
+  * Special thanks to Gregor, for all the NMUs.
+
+ -- Moshe Zadka <moshez@debian.org>  Sat, 30 Mar 2002 12:42:28 +0300
+
+python-xlib (0.11-0.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * New upstream version.
+
+ -- Gregor Hoffleit <flight@debian.org>  Thu,  7 Mar 2002 22:08:41 +0100
+
+python-xlib (0.10-0.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * New upstream version.
+
+ -- Gregor Hoffleit <flight@debian.org>  Tue, 18 Dec 2001 18:23:54 +0100
+
+python-xlib (0.8-1.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Modify the package to use the new default Debian Python version 2.1:
+    add correct dependency, and install in /usr/lib/python2.1
+    (closes: #118242).
+  * Provide postinst/prerm scripts in order to byte-compile .py files.
+
+ -- Gregor Hoffleit <flight@debian.org>  Thu, 13 Dec 2001 13:23:11 +0100
+
+python-xlib (0.8-1) unstable; urgency=low
+
+  * Initial Release. (Closes: #105388)
+
+ -- Moshe Zadka <moshez@debian.org>  Sun, 15 Jul 2001 13:12:01 +0300
